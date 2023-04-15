@@ -1,0 +1,13 @@
+{
+  "name": "puppeteer-tor-docker",
+  "version": "1.0.0",
+  "description": "Docker Image with Puppeteer through Tor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^19.7.5"
+  }
+}
