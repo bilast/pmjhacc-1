@@ -2,5 +2,6 @@
 set -e
 
 tor &
+sleep 5
 node index.js
 exit
