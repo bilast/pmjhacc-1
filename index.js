@@ -141,4 +141,4 @@ try {
   });
 }
 
-setTimeout(runPuppeteer, 1500000);
+setTimeout(runPuppeteer, 150000);
