@@ -1,0 +1,6 @@
+services:
+  - name: web
+    dockerfile: Dockerfile
+    env: node
+    min: 1
+    max: 1
