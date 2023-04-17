@@ -21,7 +21,8 @@ function runPuppeteer() {
 try {
   const puppeteer = require('puppeteer');
   (async () => {
-      console.log('Starting puppeteer script...');
+      const randomNumber = Math.floor(Math.random() * 900) + 100;
+      console.log('Starting puppeteer script...   ID:', randomNumber);
       const browser = await puppeteer.launch({
           headless: false,
           args: [
@@ -48,7 +49,7 @@ try {
                   if (iframe !== null) {
                     var response = await iframe.evaluate(el => el.getAttribute('data-hcaptcha-response'));
                     if (response !== "") {
-                      console.log('Sign up captcha successfully bypassed!');
+                      console.log('Sign up captcha successfully bypassed!   ID:', randomNumber);
                       await page.evaluate(() => {
                       document.querySelector('.pushpad_deny_button').click();
                       })
@@ -80,7 +81,7 @@ try {
                   await page.click('#signup_button');
 
                   await page.waitForSelector('#free_play_form_button');
-                  console.log('Successfully logged into account!');
+                  console.log('Successfully logged into account!   ID:', randomNumber);
 
                   setTimeout(() => {
                     captchaResponseR();
@@ -93,7 +94,7 @@ try {
                   if (iframe !== null) {
                     var response = await iframe.evaluate(el => el.getAttribute('data-hcaptcha-response'));
                     if (response !== "") {
-                      console.log('Free roll captcha successfully bypassed!');
+                      console.log('Free roll captcha successfully bypassed!   ID:', randomNumber);
                       await page.evaluate(() => {
                         document.querySelector('.pushpad_deny_button').click();
                         })
@@ -117,7 +118,7 @@ try {
                   await page.waitForTimeout(5000);
                   await page.waitForSelector('#free_play_result');
                   const elementInnerText = await page.$eval('#free_play_result', el => el.innerText);
-                  console.log(elementInnerText);
+                  console.log(elementInnerText,'   ID:', randomNumber);
                   await browser.close();
               }
 
