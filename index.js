@@ -1,5 +1,4 @@
 const express = require('express');
-const sdk = require('api')('@render-api/v1.0#dnrc1ulf088q9j');
 
 // Constants
 const PORT = 3000;
@@ -120,12 +119,6 @@ try {
                   const elementInnerText = await page.$eval('#free_play_result', el => el.innerText);
                   console.log(elementInnerText);
                   await browser.close();
-setTimeout(() => {
-  sdk.auth('srv-cgu9i0d269vbmepph32g');
-  sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cgtjt9iut4mcfrm72rsg'})
-    .then(({ data }) => console.log(data))
-    .catch(err => console.error(err));
-}, 300000);
               }
 
              captchaResponse();
